@@ -14,6 +14,7 @@ public class Starter {
       //  MusicPlayer player = new MusicPlayer(music);
         MusicPlayer player=context.getBean("musicPlayer",MusicPlayer.class);
         player.playMusic();
+        System.out.println(player.getName()+"\n"+player.getVolume());
         context.close();
     }
 
