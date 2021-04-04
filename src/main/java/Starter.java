@@ -10,12 +10,15 @@ public class Starter {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-      // Music music = context.getBean("musicBean", Music.class);
-      //  MusicPlayer player = new MusicPlayer(music);
-        MusicPlayer player=context.getBean("musicPlayer",MusicPlayer.class);
-        player.playMusic();
-        System.out.println(player.getName()+"\n"+player.getVolume());
-        context.close();
+        ClassicalMusic classicalMusic=context.getBean("musicBean",ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
+
+        // Music music = context.getBean("musicBean", Music.class);
+        //  MusicPlayer player = new MusicPlayer(music);
+//        MusicPlayer player=context.getBean("musicPlayer",MusicPlayer.class);
+//        player.playMusic();
+//        System.out.println(player.getName()+"\n"+player.getVolume());
+       context.close();
     }
 
 }
